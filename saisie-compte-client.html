@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>saisie-compte-client</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="saisie-compte-client.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="saisie-compte-client.js"></script>
+</head>
+
+
+<body>
+<div class="blockcenter">
+    <form name="monFormulaire" id="monFormulaire" method="post" onsubmit="return validation()">
+        <h1>Page de saisie des données du client</h1>
+        <br>
+        <div>
+            <label for="nom">Nom(max 20 caractères):</label>
+            <input type="text" id="nom" name="nom" required pattern="[a-zA-Z]{0-20}">
+        </div>
+
+        <div>
+            <label for="prenom">Prenom:</label>
+            <input type="text" id="prenom" name="prenom" required pattern="[a-zA-Z]{*}">
+        </div>
+
+        <div>
+            <label for="adresse">Adresse:</label>
+            <input type="text" id="adresse" name="adresse" required pattern="[a-zA-Z]{*}">
+        </div>
+
+        <div>
+            <label for="cp">Code postal:</label>
+            <input type="number" id="cp" name="cp" required pattern="[0-9]{5}">
+        </div>
+
+        <div>
+            <label for="ville">Ville:</label>
+            <input type="text" id="ville" name="ville" required pattern="[a-zA-Z]{*}">
+        </div>
+
+        <div>
+            <label for="telephone">Telephone:</label>
+            <input type="number" id="telephone" name="telephone" required pattern="[0-9]{10}">
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" size="30" required pattern="{*}@{*}">
+        </div>
+
+        <div>
+            <label>Civilité:</label>
+            <input type="radio" id="rbmonsieur" name="civilite" value="Monsieur" checked> Monsieur
+            <input type="radio" id="rbmadame" name="civilite" value="Madame"> Madame
+        </div>
+
+        <div>
+            <label for="password">Password (4 à 8 caractères):</label>
+            <input type="text" id="password" name="password" required pattern="{4-8}">
+            <div class="invalid-tooltip">
+                Please provide a password with 4 to 8 characters.
+            </div>
+        </div>
+
+        <label for="password-confirmation">Confirmation password (4 à 8 caractères):</label>
+        <input type="text" id="password-confirmation" name="password-confirmation" required pattern="{4-8}">
+        <div class="invalid-tooltip">
+            Use the same password as above.
+        </div>
+
+        <div>
+            <label for="login">Login (4 à 8 caractères):</label>
+            <input type="text" id="login" name="login" required
+                   minlength="4" maxlength="8" size="10">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit form</button>
+    </form>
+</div>
+</body>
+</html>
